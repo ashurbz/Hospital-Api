@@ -1,27 +1,33 @@
-# hospital-api
+# Hospital-api
+We’re going to design an API for the doctors of a Hospital which has been
+allocated by the govt for testing and quarantine + well being of COVID-19
+patients
+- There can be 2 types of Users
+- Doctors
+- Patients
+- Doctors can log in
+- Each time a patient visits, the doctor will follow 2 steps
+- Register the patient in the app (using phone number, if the patient
+already exists, just return the patient info in the API)
+- After the checkup, create a Report
+- Patient Report will have the following fields
+- Created by doctor
+- Status (You can use enums if you want to):
+- Can be either of: [Negative, Travelled-Quarantine,
+Symptoms-Quarantine, Positive-Admit]
+- Date
 
-un `npm install` in backend directory
-
-# start the app
 
 
-go to backend and run
-node server.js
+# API collection : 
+ - /doctors/register
+ - /doctors/login 
+ - /register_patient 
+ - /patient/:id/create_report 
+ - /patient/:id/all_report 
+ - /reports/:status
 
-API collection :
-/doctors/register
-/doctors/login
-/register_patient
-/patient/:id/create_report
-/patient/:id/all_report
-/reports/:status
 
-#testing
-I have used Mocha and chai
+# Tools
 
-Mocha is a testing framework for JavaScript that runs on Node.js and the browser. You can use any assertion library, 
-in this case we are going to use Chai to validate the http requests we make against our ExpressJS Restful API.
-
-Assertion with Chai provides natural language assertions, expressive and readable style. Chai provides three assertion styles: Should, Expect and Assert.
-# run for testing
-'''npm test'''
+ - Postman (to check api response)
