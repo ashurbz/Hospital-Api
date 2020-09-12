@@ -2,7 +2,7 @@ const mongoose=require("mongoose");
 
 
 // connecting to mongodb local
-mongoose.connect("mongodb://localhost:27017/hospital_api")
+mongoose.connect("mongodb://localhost:27017/hospitalApi")
 
 // accquring connection to check for errors
 const connection=mongoose.connection;
