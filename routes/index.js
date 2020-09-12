@@ -1,12 +1,24 @@
-const express = require("express");
-const router = express.Router();
-const doctorRouter = require("./doctor");
-const reportRouter = require("./report");
-const patientRouter = require("./patient");
-const { authenticate } = require("../middlewares/auth");
+const express=require("express");
+// requiring express router as middle ware 
+const router=express.Router();
+// requiring home controllers
 
-router.use("/doctor", doctorRouter);
-router.use("/patient", patientRouter);
-router.use("/report", reportRouter);
+
+const mongo=require("../config/mongoose")
+
+
+// default home route
+
+const doctor = require("./doctors");
+const report = require("./reports");
+const patient = require("./patients");
+
+
+router.use("/doctors", doctor); 
+router.use("/patients", patient);
+router.use("/reports", report);
 
 module.exports = router;
+
+// exports router for  main index.js
+module.exports=router;
